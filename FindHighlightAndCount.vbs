@@ -2,6 +2,8 @@ Sub FindHighlightAndCount()
     Dim searchString As String
     Dim rng As Range
     Dim count As Integer
+    Dim highlightColor As Long ' Color for highlighting
+    Dim randomColor As Long ' Randomly generated color
     
     ' Prompt the user for input using an input box
     searchString = InputBox("Enter the search string:", "Search String Input")
@@ -24,8 +26,16 @@ Sub FindHighlightAndCount()
                 ' Increment occurrence count
                 count = count + 1
                 
-                ' Highlight each occurrence
-                rng.HighlightColorIndex = wdYellow
+                ' Generate a random color with brighter shades
+                randomColor = RGB(Int((255 - 150) * Rnd()) + 150, Int((255 - 150) * Rnd()) + 150, Int((255 - 150) * Rnd()) + 150)
+                
+                ' If it's the first occurrence in this search, assign the random color
+                If count = 1 Then
+                    highlightColor = randomColor
+                End If
+                
+                ' Highlight each occurrence with the same random color
+                rng.Shading.BackgroundPatternColor = highlightColor
                 
                 ' Concatenate the occurrence count with the search string
                 rng.Text = searchString & "(" & count & ")"
