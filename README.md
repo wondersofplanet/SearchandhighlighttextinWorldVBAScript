@@ -1,6 +1,6 @@
 I want to search across the content of a Word file and find all occurrences of a substring.
 
-Each occurrence of the substring should be numbered with its occurrence number and also needs to be highlighed
+Each occurrence of the substring should be numbered with its occurrence number and also needs to be highlighed(each search will use different highlight colour(only light colours used) - same highlight colour for each search can also be set , if user needs it, just see the comments in the code)
 
 VERY USEFUL TOOL, FOR USE AS MACRO IN MICROSOFT WORD
 
