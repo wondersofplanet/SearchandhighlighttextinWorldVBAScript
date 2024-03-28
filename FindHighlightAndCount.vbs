@@ -27,6 +27,7 @@ Sub FindHighlightAndCount()
                 count = count + 1
                 
                 ' Generate a random color with brighter shades
+                ' set randomColor = RGB(255, 255, 0) for always yellow highlight in each search
                 randomColor = RGB(Int((255 - 150) * Rnd()) + 150, Int((255 - 150) * Rnd()) + 150, Int((255 - 150) * Rnd()) + 150)
                 
                 ' If it's the first occurrence in this search, assign the random color
@@ -52,4 +53,5 @@ Sub FindHighlightAndCount()
         MsgBox "No search string entered. Please try again.", vbExclamation
     End If
 End Sub
+
 
